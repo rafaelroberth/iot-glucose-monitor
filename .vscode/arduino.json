@@ -1,0 +1,5 @@
+{
+    "board": "arduino:avr:diecimila",
+    "configuration": "cpu=atmega168",
+    "sketch": "TENSION TEST\\Tensions Test.ino"
+}
