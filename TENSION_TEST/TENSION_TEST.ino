@@ -10,7 +10,7 @@ void setup() {
 }
 
 void loop() {
-  float current_voltage = analogRead(0) * 9.39 * (5.0 / 1023.0);
+  float current_voltage = analogRead(0) * (5.0 / 1023.0);
   float integral_voltage = analogRead(1) * (5.0 / 1023.0);
   Serial.print("ANALOG0: ");
   Serial.print(analogRead(0));
