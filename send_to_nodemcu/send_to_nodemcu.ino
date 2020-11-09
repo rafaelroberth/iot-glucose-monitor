@@ -70,28 +70,27 @@ void loop() {
   int current_voltage = 0;
   String recebido;
 
-    //Lê valor do Sangue
-    //Serial.print("Measured value: ");
-    //Serial.println(analogRead(0));    
-    //int current_voltage = analogRead(0) * 494.45 * (5.0 / 1023.0);
+//Lê valor do Sangue
+    Serial.print("Measured value: ");
+    Serial.println(analogRead(0));    
+    current_voltage = analogRead(0) * 494.45 * (5.0 / 1023.0);
 
-    //Lê valor Serial
-    if (Serial.available() > 0){
-      // Lê toda string recebida
-      recebido = leStringSerial();
-      current_voltage = recebido.toInt();
-    }
+//Lê valor Serial
+//    if (Serial.available() > 0){
+//      // Lê toda string recebida
+//      recebido = leStringSerial();
+//      current_voltage = recebido.toInt();
+//    }
 
   if(current_voltage > 96) {
     bloodDetected();
-    lcd.setBacklight(HIGH);
     str = String(current_voltage);
     Serial.println("Sending value to Node...");    
       
       lcd.setCursor(0,0);
       lcd.print("VALOR MEDIDO:");
       lcd.setCursor(13,0);
-      lcd.print(recebido);
+      lcd.print(str);
       lcd.setCursor(0,1);
       lcd.print("   ENVIANDO...   ");
     
