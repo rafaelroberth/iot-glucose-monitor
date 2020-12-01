@@ -7,8 +7,8 @@
 /**
  * WiFi setup
  */
-#define IOT_CONFIG_WIFI_SSID            "Wi-Fi Johnsons 2G"
-#define IOT_CONFIG_WIFI_PASSWORD        "jujuba12"
+#define IOT_CONFIG_WIFI_SSID            "OnPoint"
+#define IOT_CONFIG_WIFI_PASSWORD        "P@sspo1nt"
 
 /**
  * IoT Hub Device Connection String setup

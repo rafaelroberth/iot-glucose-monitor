@@ -13,6 +13,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+
 #include "iot_configs.h" // You must set your wifi SSID, wifi PWD, and your IoTHub Device Connection String in iot_configs.h
 #include "sample_init.h"
 
@@ -52,7 +53,7 @@ static bool g_run_demo = true;
 
 IOTHUB_MESSAGE_HANDLE message_handle;
 size_t messages_sent = 0;
-#define MESSAGE_COUNT 3 // determines the number of times the device tries to send a message to the IoT Hub in the cloud.
+#define MESSAGE_COUNT 1 // determines the number of times the device tries to send a message to the IoT Hub in the cloud.
 //TESTE
 long randNumber;
 //FIM TESTE
@@ -211,7 +212,7 @@ static void run_demo()
             IoTHubMessage_Destroy(message_handle);            
             inString = "";
             messages_sent++;
-            delay(2000);
+            delay(1000);
         }
         else if (g_message_count_send_confirmations >= MESSAGE_COUNT)
         {
@@ -233,12 +234,13 @@ static void run_demo()
     // Free all the sdk subsystem
     IoTHub_Deinit();
     LogInfo("done with sending");
+    ESP.restart();    
     return;
 }
 
 void setup() {
 
-  delay(5000);
+  delay(2000);
   Serial.begin(115200);
   while (!Serial) {
   ; // wait for serial port to connect. Needed for native USB port only
@@ -317,6 +319,7 @@ void loop(void)
 
           run_demo();
           g_run_demo = false;
+          
 
 //        if (Serial.available() > 0)
 //        {

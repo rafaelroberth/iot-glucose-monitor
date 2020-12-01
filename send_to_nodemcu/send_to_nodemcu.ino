@@ -18,7 +18,7 @@ void setup() {
   pinMode(6, OUTPUT);
  
   lcd.begin (16,2); 
-  lcd.setBacklight(LOW);
+  lcd.setBacklight(HIGH);
   lcd.setCursor(0,0);
   lcd.print("   AGUARDANDO");
   lcd.setCursor(0,1);
@@ -107,7 +107,6 @@ void loop() {
       lcd.setCursor(0,1);
       lcd.print("  NOVA AMOSTRA");
       delay(2000);
-      lcd.setBacklight(LOW);
       
   }
 }
