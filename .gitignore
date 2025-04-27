@@ -24,4 +24,4 @@ session.log
 # Ignore any other directory or file that may be generated during project execution
 *~
 
-.vscode/
+.vscode/*
